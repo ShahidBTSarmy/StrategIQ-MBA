@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+StrategIQ MBA | Executive Strategy Intelligence Platform
+</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- =========================
+ NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+<div class="logo">
+StrategIQ MBA
+</div>
+
+<ul>
+
+<li>
+<a href="#dashboard">
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="#companies">
+Companies
+</a>
+</li>
+
+<li>
+<a href="#analysis">
+Analysis
+</a>
+</li>
+
+<li>
+<a href="#charts">
+Analytics
+</a>
+</li>
+
+</ul>
+
+<button id="themeToggle">
+🌙
+</button>
+
+</nav>
+
+<!-- =========================
+ HERO
+========================= -->
+
+<section class="hero">
+
+<h1
+data-aos="fade-up">
+
+Executive Strategy Intelligence Platform
+
+</h1>
+
+<p
+data-aos="fade-up"
+data-aos-delay="200">
+
+Analyze Global Companies Through
+
+Business Intelligence,
+
+SWOT Analysis,
+
+Porter's Five Forces,
+
+Revenue Analytics,
+
+Risk Assessment,
+
+ESG Intelligence,
+
+Business Model Canvas,
+
+Industry Benchmarking
+
+and MBA Strategic Frameworks.
+
+</p>
+
+<a href="#companies">
+
+<button class="hero-btn">
+
+Explore Companies
+
+</button>
+
+</a>
+
+</section>
+
+<!-- =========================
+ EXECUTIVE DASHBOARD
+========================= -->
+
+<section
+id="dashboard"
+class="dashboard">
+
+<div class="metric-card">
+
+<h2 id="totalCompanies">
+0
+</h2>
+
+<p>
+Companies Analyzed
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="industriesCovered">
+0
+</h2>
+
+<p>
+Industries Covered
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="highestRevenue">
+-
+</h2>
+
+<p>
+Revenue Leader
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="highestGrowth">
+-
+</h2>
+
+<p>
+Growth Leader
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="avgRisk">
+-
+</h2>
+
+<p>
+Average Risk
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="marketLeader">
+-
+</h2>
+
+<p>
+Market Leader
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+ INDUSTRY DASHBOARD
+========================= -->
+
+<section id="industryDashboard">
+
+<h2 class="section-title">
+
+Industry Intelligence Dashboard
+
+</h2>
+
+<div class="dashboard">
+
+<div class="metric-card">
+
+<h2 id="marketSize">
+$0T
+</h2>
+
+<p>
+Market Size
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="growthRate">
+0%
+</h2>
+
+<p>
+Growth Rate
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="competitionScore">
+0
+</h2>
+
+<p>
+Competition Intensity
+</p>
+
+</div>
+
+<div class="metric-card">
+
+<h2 id="innovationScore">
+0
+</h2>
+
+<p>
+Innovation Score
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ SEARCH
+========================= -->
+
+<section class="search-section">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Company...">
+
+</section>
+
+<!-- =========================
+ FILTERS
+========================= -->
+
+<section class="filters">
+
+<button class="filter-btn">
+All
+</button>
+
+<button class="filter-btn">
+Technology
+</button>
+
+<button class="filter-btn">
+Retail
+</button>
+
+<button class="filter-btn">
+Automotive
+</button>
+
+<button class="filter-btn">
+Food
+</button>
+
+<button class="filter-btn">
+Finance
+</button>
+
+<button class="filter-btn">
+Consulting
+</button>
+
+</section>
+
+<!-- =========================
+ COMPANY CARDS
+========================= -->
+
+<section id="companies">
+
+<h2 class="section-title">
+
+Featured Companies
+
+</h2>
+
+<div class="company-container">
+
+<!-- Dynamic Cards Loaded Here -->
+
+</div>
+
+</section>
+
+<!-- =========================
+ COMPANY PROFILE
+========================= -->
+
+<section class="profile">
+
+<div class="profile-card">
+
+<h2 id="companyName">
+
+Select a Company
+
+</h2>
+
+<p id="companyIndustry"></p>
+
+<p id="companyRevenue"></p>
+
+<p id="companyRisk"></p>
+
+<h3>
+Executive Summary
+</h3>
+
+<p id="summary"></p>
+
+<h3>
+Business Model
+</h3>
+
+<p id="businessModel"></p>
+
+</div>
+
+</section>
+
+<!-- =========================
+ SWOT ANALYSIS
+========================= -->
+
+<section id="analysis">
+
+<h2 class="section-title">
+
+SWOT Analysis
+
+</h2>
+
+<div class="swot-grid">
+
+<div class="swot-card">
+
+<h3>
+Strengths
+</h3>
+
+<ul id="strengths"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Weaknesses
+</h3>
+
+<ul id="weaknesses"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Opportunities
+</h3>
+
+<ul id="opportunities"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Threats
+</h3>
+
+<ul id="threats"></ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ PORTER'S FIVE FORCES
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Porter's Five Forces
+
+</h2>
+
+<div id="forces">
+
+<!-- Dynamic Forces -->
+
+</div>
+
+</section>
+
+<!-- =========================
+ REVENUE ANALYTICS
+========================= -->
+
+<section id="charts">
+
+<h2 class="section-title">
+
+Revenue Analytics
+
+</h2>
+
+<div class="chart-card">
+
+<canvas id="revenueChart"></canvas>
+
+</div>
+
+</section>
+
+<!-- =========================
+ MARKET SHARE ANALYTICS
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Market Share Analytics
+
+</h2>
+
+<div class="chart-card">
+
+<canvas id="marketChart"></canvas>
+
+</div>
+
+</section>
+
+<!-- =========================
+ STRATEGIC RECOMMENDATIONS
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Strategic Recommendations
+
+</h2>
+
+<div class="recommendation-card">
+
+<ul id="recommendations">
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- =========================
+ ESG DASHBOARD
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+ESG Performance Dashboard
+
+</h2>
+
+<div class="lessons-grid">
+
+<div class="lesson-card">
+
+<h3>
+Environmental
+</h3>
+
+<h2 id="environmentalScore">
+0
+</h2>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>
+Social
+</h3>
+
+<h2 id="socialScore">
+0
+</h2>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>
+Governance
+</h3>
+
+<h2 id="governanceScore">
+0
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ RISK INTELLIGENCE
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Risk Intelligence
+
+</h2>
+
+<div class="profile-card">
+
+<h2 id="riskIndicator">
+
+Medium Risk
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- =========================
+ COMPANY COMPARISON
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Company Comparison
+
+</h2>
+
+<div class="comparison-container">
+
+<select id="company1">
+
+</select>
+
+<select id="company2">
+
+</select>
+
+<button id="compareBtn">
+
+Compare
+
+</button>
+
+</div>
+
+<div id="comparisonResult">
+
+</div>
+
+</section>
+
+<!-- =========================
+ BUSINESS MODEL CANVAS
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+Business Model Canvas
+
+</h2>
+
+<div class="swot-grid">
+
+<div class="swot-card">
+
+<h3>
+Key Partners
+</h3>
+
+<ul id="keyPartners"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Key Activities
+</h3>
+
+<ul id="keyActivities"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Value Proposition
+</h3>
+
+<ul id="valueProposition"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Customer Segments
+</h3>
+
+<ul id="customerSegments"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Revenue Streams
+</h3>
+
+<ul id="revenueStreams"></ul>
+
+</div>
+
+<div class="swot-card">
+
+<h3>
+Cost Structure
+</h3>
+
+<ul id="costStructure"></ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ MBA LEARNING INSIGHTS
+========================= -->
+
+<section>
+
+<h2 class="section-title">
+
+MBA Learning Insights
+
+</h2>
+
+<div class="lessons-grid">
+
+<div class="lesson-card">
+
+<h3>
+Marketing
+</h3>
+
+<ul id="marketingLessons"></ul>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>
+Strategy
+</h3>
+
+<ul id="strategyLessons"></ul>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>
+Operations
+</h3>
+
+<ul id="operationsLessons"></ul>
+
+</div>
+
+<div class="lesson-card">
+
+<h3>
+Leadership
+</h3>
+
+<ul id="leadershipLessons"></ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+ PDF EXPORT
+========================= -->
+
+<section
+style="
+text-align:center;
+padding:30px;
+">
+
+<button
+id="downloadReport"
+class="hero-btn">
+
+📄 Download Executive Report
+
+</button>
+
+</section>
+
+<!-- =========================
+ FOOTER
+========================= -->
+
+<footer>
+
+<h2>
+
+StrategIQ MBA
+
+</h2>
+
+<p>
+
+Executive Strategy Intelligence Platform
+
+</p>
+
+<p>
+
+Business Intelligence • SWOT • ESG • Strategy • Analytics
+
+</p>
+
+<p>
+
+Built By Shahid Pasha
+
+</p>
+
+</footer>
+
+<!-- =========================
+ LIBRARIES
+========================= -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init();
+
+</script>
+
+<!-- =========================
+ PROJECT FILES
+========================= -->
+
+<script src="data/companies.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
